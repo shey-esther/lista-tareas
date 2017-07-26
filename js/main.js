@@ -66,7 +66,7 @@ function mostrar(){
 
   for (var i = 0; i < arrayTareas.length; i++) {
 
-    html += "<div>"+"<li>" + arrayTareas[i].title;+ "</li>" +"</div>";
+    html += "<div>"+"<li id='"+arrayTareas[i].id+"'>" + arrayTareas[i].title+"</li>" +"</div>";
   }
   document.getElementById("mostrar").innerHTML = html;
 }
@@ -89,7 +89,19 @@ function añadir(){
     mostrar();
 }
 
+ //tachar el elemento del array
+var liTags = document.getElementsByTagName("li");
+for (var i = 0; i < liTags.length; i++) {
+    liTags[i].onclick = function (event){
+      var li =event.target.id;
+      document.getElementById(li).style.textDecoration= "line-through";
 
+     // eleminarTarea (event); 
+    }
+}
 
-
+// function eleminarTarea(event){
+    
+//      console.log (event.target.textContent);
+// }
 
