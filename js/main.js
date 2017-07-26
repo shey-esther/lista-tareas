@@ -53,27 +53,42 @@ var arrayTareas =[ {
     "completed": false
   },
   {
-    "userId": 1,
-    "id": 10,
-    "title": "illo est ratione doloremque quia maiores aut",
-    "completed": true
+    userId: 1,
+    id: 10,
+    title: "illo est ratione doloremque quia maiores aut",
+    completed: true
   }];
 
-
+// en esta function recorre el array en la posicion del title
+function mostrar(){ 
   var html = "";
-
   for (var i = 0; i < arrayTareas.length; i++) {
     var tarea1 = arrayTareas[i].title;
     var titulos = "<div>"+"<li>" + tarea1+ "</li>" +"</div>";
 
     html += titulos;
+
   }
   document.getElementById("mostrar").innerHTML = html;
+  }
+  mostrar();
+
+
+function tareas(userId,id,title,completed){
+  this.userId=userId,
+  this.id=id,
+  this.title=title,
+  this.completed=completed
+}
 
 function añadir(){
 
-    var agregar = document.getElementById("s").value;
-    document.getElementById("tareas").innerHTML+= "<li>" + agregar + "</li>"
+    var agregar = document.getElementById("agregar").value;
+    var tareitas = new tareas(1,10,agregar,true);
+    arrayTareas.push(tareitas);
+    mostrar();
+
+   // document.getElementById("tareas").innerHTML+= "<li>" + agregar + "</li>"
 }
 
 
