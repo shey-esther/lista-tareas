@@ -63,17 +63,15 @@ var arrayTareas =[ {
 function mostrar(){ 
   var html = "";
   for (var i = 0; i < arrayTareas.length; i++) {
-    var tarea1 = arrayTareas[i].title;
-    var titulos = "<div>"+"<li>" + tarea1+ "</li>" +"</div>";
-
-    html += titulos;
+  
+    html = "<div>"+"<li>" + arrayTareas[i].title;+ "</li>" +"</div>";
 
   }
   document.getElementById("mostrar").innerHTML = html;
-  }
+}
   mostrar();
 
-
+// funcion constructora
 function tareas(userId,id,title,completed){
   this.userId=userId,
   this.id=id,
@@ -81,14 +79,13 @@ function tareas(userId,id,title,completed){
   this.completed=completed
 }
 
+//Agrego una nueva tarea en el html && creando una instancia 
 function añadir(){
 
     var agregar = document.getElementById("agregar").value;
-    var tareitas = new tareas(1,10,agregar,true);
+    var tareitas = new tareas(1,10,agregar,true); // creando instancia
     arrayTareas.push(tareitas);
     mostrar();
-
-   // document.getElementById("tareas").innerHTML+= "<li>" + agregar + "</li>"
 }
 
 
