@@ -59,13 +59,14 @@ var arrayTareas =[ {
     completed: true
   }];
 
-// en esta function recorre el array en la posicion del title
+// en esta function recorre el array a la posicion title
 function mostrar(){ 
-  var html = "";
-  for (var i = 0; i < arrayTareas.length; i++) {
-  
-    html = "<div>"+"<li>" + arrayTareas[i].title;+ "</li>" +"</div>";
 
+  var html = "";
+
+  for (var i = 0; i < arrayTareas.length; i++) {
+
+    html += "<div>"+"<li>" + arrayTareas[i].title;+ "</li>" +"</div>";
   }
   document.getElementById("mostrar").innerHTML = html;
 }
@@ -79,7 +80,7 @@ function tareas(userId,id,title,completed){
   this.completed=completed
 }
 
-//Agrego una nueva tarea en el html && creando una instancia 
+//Agrega una nueva tarea en el html && creando una instancia
 function añadir(){
 
     var agregar = document.getElementById("agregar").value;
