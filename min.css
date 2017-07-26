@@ -65,5 +65,12 @@ button {
     background: white;
     
 }
+li{
+	text-decoration:"line-through";
+}
+li.checked{
+	
+	color: black;
 
+}
 

@@ -59,6 +59,11 @@ var arrayTareas =[ {
     completed: true
   }];
 
+
+
+
+/////////////////////TODO ESTO ES PARA EDITAR////////////////////////////////////////
+
 // en esta function recorre el array a la posicion title
 function mostrar(){ 
 
@@ -66,7 +71,7 @@ function mostrar(){
 
   for (var i = 0; i < arrayTareas.length; i++) {
 
-    html += "<div>"+"<li id='"+arrayTareas[i].id+"'>" + arrayTareas[i].title+"</li>" +"</div>";
+    html += "<div>"+"<li contentEditable>" + arrayTareas[i].title+"</li>" +"</div>";
   }
   document.getElementById("mostrar").innerHTML = html;
 }
@@ -89,19 +94,60 @@ function añadir(){
     mostrar();
 }
 
- //tachar el elemento del array
-var liTags = document.getElementsByTagName("li");
-for (var i = 0; i < liTags.length; i++) {
-    liTags[i].onclick = function (event){
-      var li =event.target.id;
-      document.getElementById(li).style.textDecoration= "line-through";
+//tachar el elemento del array//EDITAAAAAA!!!
+var tacharLista = document.getElementsByTagName("li");
+for (var i = 0; i < tacharLista.length; i++) {
+    tacharLista[i].onclick = function (event){
 
-     // eleminarTarea (event); 
+      eleminarTarea (event); 
     }
 }
 
-// function eleminarTarea(event){
-    
-//      console.log (event.target.textContent);
+function eleminarTarea(event){
+     console.log (event.target.textContent);
+}
+
+
+
+///////////////////// al descomentar todo este ejercicio tacha la lista /////////////////////////
+
+
+
+// // en esta function recorre el array a la posicion title
+// function mostrar(){ 
+
+//   var html = "";
+
+//   for (var i = 0; i < arrayTareas.length; i++) {
+
+//     html += "<div>"+"<li id='"+arrayTareas[i].id+"'>" + arrayTareas[i].title+"</li>" +"</div>";
+//   }
+//   document.getElementById("mostrar").innerHTML = html;
+// }
+//   mostrar();
+
+// // funcion constructora
+// function tareas(userId,id,title,completed){
+//   this.userId=userId,
+//   this.id=id,
+//   this.title=title,
+//   this.completed=completed
 // }
 
+// //Agrega una nueva tarea en el html && creando una instancia
+// function añadir(){
+
+//     var agregar = document.getElementById("agregar").value;
+//     var tareitas = new tareas(1,10,agregar,true); // creando instancia
+//     arrayTareas.push(tareitas);
+//     mostrar();
+// }
+
+//  //tachar el elemento del array
+// var listaTachar = document.getElementsByTagName("li");
+// for (var i = 0; i < listaTachar.length; i++) {
+//     listaTachar[i].onclick = function (event){
+//       var li = event.target.id;
+//       document.getElementById(li).style.textDecoration= "line-through"; 
+//     }
+// }
